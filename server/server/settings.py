@@ -123,3 +123,16 @@ STATIC_URL: str = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD: str = "django.db.models.BigAutoField"
+
+
+# Social Auth
+
+SOCIAL_AUTH_STEAM_API_KEY: str = '...' # dummy key
+SOCIAL_AUTH_STEAM_EXTRA_DATA: list[str] = ['player']
+
+SOCIAL_AUTH_AUTHENTICATION_BACKENDS: tuple[str] = (
+    'social_core.backends.steam.SteamOpenId',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/login/steam/'

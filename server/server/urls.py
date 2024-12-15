@@ -15,7 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path, re_path
+
+import social_django.apps
+from social_django.urls import urlpatterns as social_django_urls
+from social_django.urls import app_name
+import social_django
 
 from gmod import views
 
@@ -23,4 +28,7 @@ urlpatterns = [
     path("", views.PageIndex, name="index"),
     path("players/", views.PagePlayers, name="players"),
     path("admin/", admin.site.urls),
+
+    # Social Auth
+    re_path(r"^", include((social_django_urls, app_name), namespace="social")),
 ]

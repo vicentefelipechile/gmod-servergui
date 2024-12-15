@@ -1,0 +1,33 @@
+{% extends "__body.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Players</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>SteamID</th>
+                            <th>Name</th>
+                            <th>Time Played</th>
+                            <th>First Seen</th>
+                            <th>Last Seen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for player in players %}
+                            <tr>
+                                <td>{{ player.steamid }}</td>
+                                <td>{{ player.name }}</td>
+                                <td>{{ player.time_played }}</td>
+                                <td>{{ player.first_seen }}</td>
+                                <td>{{ player.last_seen }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

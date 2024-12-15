@@ -57,7 +57,7 @@
                 <a class="btn btn-outline-light" href="{% url 'index' %}">Logout</a>
                 <a class="btn btn-outline-light" href="{% url 'index' %}">Profile</a>
             {% else %}
-                <a class="btn btn-outline-light" href="{% url 'index' %}">Login</a>
+                <a class="btn btn-outline-light" href="{% url 'social:begin' 'steam' %}">Login</a>
             {% endif %}
             </div>
         </div>
